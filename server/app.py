@@ -50,7 +50,7 @@ class PlantByID(Resource):
     def patch(self,id):
         record = Newsletter.query.filter_by(id=id).first()
         for attr in request.form:
-            setattr(record, attr, request.form[!attr])
+            setattr(record, attr, request.form[attr])
 
         db.session.add(record)
         db.session.commit()
